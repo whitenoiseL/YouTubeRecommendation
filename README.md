@@ -10,7 +10,7 @@ Project approaches:
 Collect and visualize graph properties.
 * Assume the top 20 recommended videos would have shorter path to the parent videos than other nodes. The prediction is done by setting a threshold the shortest path between test pairs.
 * Bench mark by using undirected graph constructed from the training data, and calculate the shortest path bewteen each testing pairs.
-* Seperate 26901 parent nodes into three clusters by spectral clustering and treat the rest of the nodes as chirldren nodes. Using the result to further filter the benchmark result.
-* Divide the parent node using kmeans clustering on the feaure vectors instead.
-* Perform spectral clustering on the entire graph and perform local search.
-* Set edges between cluster and perform global search.
+* For the videos in testing data also exist in training data, perform shorttest parth to label the edge.
+* For those edges are already exist in training data, label that edge 1
+* For those target video exist in train data and shares the same category with source video and the target video's rate is higher than source video, label that edge 1
+* For those target video exist in train[video_id] and shares the same uploader with source video, label that edge 1
